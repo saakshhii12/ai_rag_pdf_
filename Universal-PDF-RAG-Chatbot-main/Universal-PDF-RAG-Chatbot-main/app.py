@@ -1,4 +1,4 @@
-import streamlit as st
+mport streamlit as st
 import os
 import tempfile
 import time
@@ -62,7 +62,6 @@ except:
     OPENAI_AVAILABLE = False
 
 # Configuration
-INDEX_DIR = "faiss_index_storage"
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
 CHUNK_SIZE = 800
 CHUNK_OVERLAP = 150
@@ -223,7 +222,6 @@ st.markdown("""
 has_groq = bool(os.environ.get("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY", None))
 has_openai = bool(os.environ.get("OPENAI_API_KEY") or st.secrets.get("OPENAI_API_KEY", None))
 use_groq = GROQ_AVAILABLE and has_groq
-force_rebuild = False
 
 # How to Use Workflow
 st.markdown("""
@@ -341,28 +339,27 @@ def load_documents_langchain(dir_path: str) -> List[Document]:
 def get_embeddings():
     return HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
 
-def build_or_load_faiss(docs: List[Document], index_dir: str, force_rebuild: bool = False):
+def build_faiss_index(docs: List[Document], index_dir: str):
+    """
+    Build a completely NEW FAISS index for the currently uploaded PDFs.
+
+    We intentionally do not load a global/persistent FAISS index here.
+    A global index can cause sources from an earlier PDF to appear when
+    a different PDF is uploaded, especially on a deployed multi-user app.
+    """
     embeddings = get_embeddings()
-    
-    if os.path.exists(index_dir) and not force_rebuild:
-        try:
-            db = FAISS.load_local(index_dir, embeddings, allow_dangerous_deserialization=True)
-            st.success("&#9989; Loaded existing FAISS index")
-            log_event("Loaded existing FAISS index")
-            return db
-        except Exception as e:
-            st.warning(f"&#9888; Failed to load index: {e}. Rebuilding...")
-            log_event(f"Failed to load index: {e}", "WARNING")
-            shutil.rmtree(index_dir, ignore_errors=True)
-    
-    with st.spinner("&#128296; Building FAISS index..."):
-        log_event(f"Building FAISS index from {len(docs)} documents")
+
+    # Always start with a clean index directory.
+    shutil.rmtree(index_dir, ignore_errors=True)
+    os.makedirs(index_dir, exist_ok=True)
+
+    with st.spinner("&#128296; Building a fresh FAISS index for your PDF(s)..."):
+        log_event(f"Building NEW FAISS index from {len(docs)} chunks")
         db = FAISS.from_documents(docs, embeddings)
-        os.makedirs(index_dir, exist_ok=True)
         db.save_local(index_dir)
-        st.success("&#9989; FAISS index built and saved")
-        log_event("FAISS index built successfully")
-    
+        st.success("&#9989; New FAISS index built for the uploaded PDF(s)")
+        log_event("New session FAISS index built successfully")
+
     return db
 
 def get_groq_llm_instance(api_key, model_name):
@@ -388,28 +385,56 @@ if uploaded_files:
         temp_dir = tempfile.mkdtemp(prefix="rag_chatbot_")
         
         try:
-            # Only process if not already processed or new files
-            if "processed_files" not in st.session_state or st.session_state.get("processed_files") != [f.name for f in uploaded_files]:
+            # Build a signature from filename + size + content hash.
+            # This also detects a different PDF with the SAME filename.
+            import hashlib
+
+            current_file_signature = []
+            for f in uploaded_files:
+                file_bytes = f.getvalue()
+                current_file_signature.append(
+                    (f.name, len(file_bytes), hashlib.sha256(file_bytes).hexdigest())
+                )
+
+            previous_signature = st.session_state.get("processed_file_signature")
+
+            # Only process when the uploaded document set is new or changed.
+            if previous_signature != current_file_signature:
                 log_event(f"Processing {len(uploaded_files)} uploaded files")
+
+                # Remove the previous session index so old documents cannot leak
+                # into the new document set.
+                old_index_dir = st.session_state.get("session_index_dir")
+                if old_index_dir:
+                    shutil.rmtree(old_index_dir, ignore_errors=True)
+
                 saved_paths = save_uploaded_files(uploaded_files, temp_dir)
                 st.success(f"&#9989; Uploaded {len(saved_paths)} file(s)")
-                
+
                 with st.spinner("&#128214; Loading documents..."):
                     docs = load_documents_langchain(temp_dir)
-                    
+
                     if not docs:
                         st.error("&#10060; No documents loaded")
                         st.stop()
-                    
+
                     st.info(f"&#128196; Loaded {len(docs)} document chunks")
-                
-                db = build_or_load_faiss(docs, INDEX_DIR, force_rebuild)
-                # Use regular similarity search for better accuracy
+
+                # Create a separate FAISS index for THIS Streamlit session
+                # and THIS exact set of uploaded PDFs.
+                session_index_dir = tempfile.mkdtemp(prefix="faiss_session_")
+                db = build_faiss_index(docs, session_index_dir)
+
+                # Use ONLY this fresh index for retrieval.
+                st.session_state["session_index_dir"] = session_index_dir
                 st.session_state["retriever"] = db.as_retriever(
                     search_kwargs={"k": TOP_K}
                 )
-                st.session_state["processed_files"] = [f.name for f in uploaded_files]
-            
+                st.session_state["processed_file_signature"] = current_file_signature
+
+                # A new document set should start a new conversation.
+                st.session_state["messages"] = []
+
             if "retriever" in st.session_state:
                 retriever = st.session_state["retriever"]
                 
@@ -624,4 +649,3 @@ Answer:
             <p style='color: #94a3b8;'>Limit: 200MB per file • Supports multiple PDFs</p>
         </div>
         """, unsafe_allow_html=True)
-
