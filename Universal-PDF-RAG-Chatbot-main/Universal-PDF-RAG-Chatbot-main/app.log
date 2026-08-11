@@ -1,0 +1,100 @@
+2026-08-11 23:30:49,874 - INFO - Processing 1 uploaded files
+2026-08-11 23:30:50,240 - INFO - Low text content detected in T1_FSM.pdf, using OCR mode...
+2026-08-11 23:30:50,278 - WARNING - OCR failed for T1_FSM.pdf: No module named 'pdfminer'
+2026-08-11 23:30:50,278 - INFO - Extracted text sample from T1_FSM.pdf:   ...
+2026-08-11 23:30:50,278 - INFO - Created 0 chunks from T1_FSM.pdf
+2026-08-11 23:31:28,602 - INFO - Processing 1 uploaded files
+2026-08-11 23:31:28,648 - INFO - Extracted text sample from vishakha_resume (1).pdf: VISHAKHA GITE Goregaon, Mumbai|+91 9322177516|vishakha120106@gmail.com| linkedin.com/in/vishakha-gite12/ PROJECTS BloodO – Blood Donation & Awareness Mobile Application EDUCATION Vidyanagar Institute of Technology (VIT) Wadala, Mumbai — B.E. in Computer Engineering (Third Year) Vidyalankar Polytechnic Mumbai — Diploma in Computer Engineering (Aggregate: 89.40%) TECHNICAL SKILLS EXPERIENCE & TRAINING Machine Learning Trainee (Residential Program) larsen and toubro (L&T)-Madh PROFESSIONAL SUMMARY ...
+2026-08-11 23:31:28,648 - INFO - Created 5 chunks from vishakha_resume (1).pdf
+2026-08-11 23:31:52,234 - INFO - No device provided, using cpu
+2026-08-11 23:31:53,338 - INFO - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-08-11 23:31:53,589 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-11 23:31:53,589 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-11 23:31:53,591 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/modules.json "HTTP/1.1 200 OK"
+2026-08-11 23:31:53,625 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/modules.json "HTTP/1.1 200 OK"
+2026-08-11 23:32:00,033 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-11 23:32:00,047 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-08-11 23:32:00,069 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-08-11 23:32:00,084 - INFO - Loading SentenceTransformer model from sentence-transformers/all-mpnet-base-v2.
+2026-08-11 23:32:00,291 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-11 23:32:00,312 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-08-11 23:32:00,523 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-08-11 23:32:00,545 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/README.md "HTTP/1.1 200 OK"
+2026-08-11 23:32:00,565 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/README.md "HTTP/1.1 200 OK"
+2026-08-11 23:32:00,789 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-11 23:32:00,794 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/modules.json "HTTP/1.1 200 OK"
+2026-08-11 23:32:01,044 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-11 23:32:01,058 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-08-11 23:32:01,087 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-08-11 23:32:01,355 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-08-11 23:32:01,593 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-11 23:32:01,612 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/config.json "HTTP/1.1 200 OK"
+2026-08-11 23:32:01,634 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/config.json "HTTP/1.1 200 OK"
+2026-08-11 23:32:01,991 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+2026-08-11 23:33:17,915 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-08-11 23:33:18,157 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-08-11 23:33:18,414 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-08-11 23:33:18,691 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-08-11 23:33:18,972 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-11 23:33:19,037 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-11 23:33:19,104 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-11 23:33:19,385 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-11 23:33:19,431 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/config.json "HTTP/1.1 200 OK"
+2026-08-11 23:33:19,702 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-11 23:33:19,819 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/config.json "HTTP/1.1 200 OK"
+2026-08-11 23:33:20,261 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-11 23:33:20,303 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-11 23:33:20,544 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-mpnet-base-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-08-11 23:33:20,764 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-mpnet-base-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-08-11 23:33:20,983 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/vocab.txt "HTTP/1.1 307 Temporary Redirect"
+2026-08-11 23:33:20,993 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/vocab.txt "HTTP/1.1 200 OK"
+2026-08-11 23:33:21,030 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/vocab.txt "HTTP/1.1 200 OK"
+2026-08-11 23:33:21,385 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-11 23:33:21,441 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/tokenizer.json "HTTP/1.1 200 OK"
+2026-08-11 23:33:21,467 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/tokenizer.json "HTTP/1.1 200 OK"
+2026-08-11 23:33:21,763 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-08-11 23:33:22,010 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-11 23:33:22,028 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-08-11 23:33:22,049 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-08-11 23:33:22,305 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-08-11 23:33:22,648 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-mpnet-base-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-11 23:33:22,701 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-08-11 23:33:22,733 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-mpnet-base-v2/e8c3b32edf5434bc2275fc9bab85f82640a19130/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-08-11 23:33:23,022 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-mpnet-base-v2 "HTTP/1.1 200 OK"
+2026-08-11 23:33:23,052 - INFO - Building FAISS index from 5 documents
+2026-08-11 23:33:24,039 - INFO - Loading faiss with AVX2 support.
+2026-08-11 23:33:24,039 - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-08-11 23:33:24,039 - INFO - Loading faiss.
+2026-08-11 23:33:24,145 - INFO - Successfully loaded faiss.
+2026-08-11 23:33:24,198 - INFO - FAISS index built successfully
+2026-08-11 23:34:08,113 - INFO - Processing query: whatsthe candidate name
+...
+2026-08-11 23:34:10,569 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-11 23:34:10,651 - INFO - Retrieved 5 chunks for query
+2026-08-11 23:34:10,652 - INFO - Generated answer using llama-3.3-70b-versatile
+2026-08-11 23:49:10,098 - INFO - Processing 1 uploaded files
+2026-08-11 23:49:10,474 - INFO - Low text content detected in TCS NOTES Mse 1.pdf, using OCR mode...
+2026-08-11 23:49:10,487 - WARNING - OCR failed for TCS NOTES Mse 1.pdf: No module named 'pdfminer'
+2026-08-11 23:49:10,491 - INFO - Extracted text sample from TCS NOTES Mse 1.pdf: ...
+2026-08-11 23:49:10,495 - INFO - Created 0 chunks from TCS NOTES Mse 1.pdf
+2026-08-11 23:49:24,390 - INFO - Processing 1 uploaded files
+2026-08-11 23:49:24,481 - INFO - Extracted text sample from vishakha_resume (1).pdf: VISHAKHA GITE Goregaon, Mumbai|+91 9322177516|vishakha120106@gmail.com| linkedin.com/in/vishakha-gite12/ PROJECTS BloodO – Blood Donation & Awareness Mobile Application EDUCATION Vidyanagar Institute of Technology (VIT) Wadala, Mumbai — B.E. in Computer Engineering (Third Year) Vidyalankar Polytechnic Mumbai — Diploma in Computer Engineering (Aggregate: 89.40%) TECHNICAL SKILLS EXPERIENCE & TRAINING Machine Learning Trainee (Residential Program) larsen and toubro (L&T)-Madh PROFESSIONAL SUMMARY ...
+2026-08-11 23:49:24,483 - INFO - Created 5 chunks from vishakha_resume (1).pdf
+2026-08-11 23:49:24,487 - ERROR - App error: name 'force_rebuild' is not defined
+2026-08-11 23:52:19,799 - INFO - Processing 1 uploaded files
+2026-08-11 23:52:19,918 - INFO - Extracted text sample from vishakha_resume (1).pdf: VISHAKHA GITE Goregaon, Mumbai|+91 9322177516|vishakha120106@gmail.com| linkedin.com/in/vishakha-gite12/ PROJECTS BloodO – Blood Donation & Awareness Mobile Application EDUCATION Vidyanagar Institute of Technology (VIT) Wadala, Mumbai — B.E. in Computer Engineering (Third Year) Vidyalankar Polytechnic Mumbai — Diploma in Computer Engineering (Aggregate: 89.40%) TECHNICAL SKILLS EXPERIENCE & TRAINING Machine Learning Trainee (Residential Program) larsen and toubro (L&T)-Madh PROFESSIONAL SUMMARY ...
+2026-08-11 23:52:19,938 - INFO - Created 5 chunks from vishakha_resume (1).pdf
+2026-08-11 23:52:19,945 - ERROR - App error: name 'force_rebuild' is not defined
+2026-08-11 23:53:10,673 - INFO - Processing 1 uploaded files
+2026-08-11 23:53:10,718 - INFO - Extracted text sample from vishakha_resume (1).pdf: VISHAKHA GITE Goregaon, Mumbai|+91 9322177516|vishakha120106@gmail.com| linkedin.com/in/vishakha-gite12/ PROJECTS BloodO – Blood Donation & Awareness Mobile Application EDUCATION Vidyanagar Institute of Technology (VIT) Wadala, Mumbai — B.E. in Computer Engineering (Third Year) Vidyalankar Polytechnic Mumbai — Diploma in Computer Engineering (Aggregate: 89.40%) TECHNICAL SKILLS EXPERIENCE & TRAINING Machine Learning Trainee (Residential Program) larsen and toubro (L&T)-Madh PROFESSIONAL SUMMARY ...
+2026-08-11 23:53:10,718 - INFO - Created 5 chunks from vishakha_resume (1).pdf
+2026-08-11 23:53:10,722 - ERROR - App error: name 'force_rebuild' is not defined
+2026-08-11 23:54:29,395 - INFO - Processing 1 uploaded files
+2026-08-11 23:54:29,432 - INFO - Extracted text sample from vishakha_resume (1).pdf: VISHAKHA GITE Goregaon, Mumbai|+91 9322177516|vishakha120106@gmail.com| linkedin.com/in/vishakha-gite12/ PROJECTS BloodO – Blood Donation & Awareness Mobile Application EDUCATION Vidyanagar Institute of Technology (VIT) Wadala, Mumbai — B.E. in Computer Engineering (Third Year) Vidyalankar Polytechnic Mumbai — Diploma in Computer Engineering (Aggregate: 89.40%) TECHNICAL SKILLS EXPERIENCE & TRAINING Machine Learning Trainee (Residential Program) larsen and toubro (L&T)-Madh PROFESSIONAL SUMMARY ...
+2026-08-11 23:54:29,432 - INFO - Created 5 chunks from vishakha_resume (1).pdf
+2026-08-11 23:54:29,443 - INFO - Loaded existing FAISS index
+2026-08-11 23:54:37,348 - INFO - Processing query: what are the skills...
+2026-08-11 23:54:40,693 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-11 23:54:40,710 - INFO - Retrieved 5 chunks for query
+2026-08-11 23:54:40,710 - INFO - Generated answer using llama-3.3-70b-versatile
